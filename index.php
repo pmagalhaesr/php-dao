@@ -17,10 +17,20 @@ echo json_encode($lista);
 $search = Usuario::search("te");
 echo json_encode($search);*/
 
-/*Carrega um usuario usando login e senha*/
+/*Carrega um usuario usando login e senha
+$usuario = new Usuario();
+$usuario->login("arthur", "041021");
+echo $usuario;*/
+
+/* criando um novo usuario
+$aluno = new Usuario("Arthur Magalhaes", "041021");
+$aluno->insert();
+echo $aluno;*/
 
 $usuario = new Usuario();
-$usuario->login("teste", "12345");
+$usuario->loadById(2);
+$usuario->update("Arthur de Souza Magalhaes", "P@ul0");
 
 echo $usuario;
+
  ?>
